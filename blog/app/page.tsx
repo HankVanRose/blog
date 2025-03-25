@@ -6,6 +6,8 @@ export default function Home() {
     <div style={{display:'flex', flexDirection:'column'}}>
       <Header size="l"> HankVanRoses' Blog </Header>
       <SingleCard size="l" />
+      <SingleCard size="l" />
+      <SingleCard size="l" />
     </div>
   );
 }

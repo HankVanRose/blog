@@ -5,10 +5,18 @@
   margin-right: 809px;
   margin-top: 125px;
   margin-left: 46px;
+  
+}
+.singleCard:hover{
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  transition: 0.2s;
 }
 
 .l {
   width: 350px;
   height: 402px;
-  border: 0.6px solid rgb(193, 193, 193);
+  border: 2px solid rgba(92, 92, 92, 0.441);
+   
+  border-radius: 5px;
 }
+ 
