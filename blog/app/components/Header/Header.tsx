@@ -2,8 +2,8 @@ import React from 'react';
 import { HeaderProps } from './Header.props';
 import styles from './Header.module.css';
 import cn from 'classnames';
-import Logo from '../Logo/Logo';
-import GitLink from '../GitLink/GitLink';
+import Logo from './Logo/Logo';
+import GitLink from './GitLink/GitLink';
  
 
 export default function Header({

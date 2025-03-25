@@ -2,7 +2,8 @@ import React, { JSX } from 'react';
 import { SingleCardProps } from './SingleCard.props';
 import styles from './SingleCard.module.css';
 import cn from 'classnames';
-import Image from './image.svg';
+
+import CardBody from './CardBody/CardBody';
 
 export default function SingleCard({
   size,
@@ -19,9 +20,7 @@ export default function SingleCard({
       })}
       {...props}
     >
-      <div style={{ margin: '10px 10px 192px 10px ' }}>
-        <Image />
-      </div>
+      <CardBody />
     </div>
   );
 }
