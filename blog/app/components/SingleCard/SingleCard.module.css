@@ -1,22 +1,16 @@
 .singleCard {
-  margin: 0;
-  position: absolute;
-  margin-bottom: 31px;
-  margin-right: 809px;
-  margin-top: 125px;
-  margin-left: 46px;
-  
+  margin: 0 46px 31px 46px;
 }
-.singleCard:hover{
+.singleCard:hover {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
   transition: 0.2s;
+  transform: scale(1.02);
 }
 
 .l {
   width: 350px;
   height: 402px;
   border: 2px solid rgba(92, 92, 92, 0.441);
-   
+
   border-radius: 5px;
 }
- 
