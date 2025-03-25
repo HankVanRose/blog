@@ -1,0 +1,14 @@
+.singleCard {
+  margin: 0;
+  position: absolute;
+  margin-bottom: 31px;
+  margin-right: 809px;
+  margin-top: 125px;
+  margin-left: 46px;
+}
+
+.l {
+  width: 350px;
+  height: 402px;
+  border: 0.6px solid rgb(193, 193, 193);
+}
