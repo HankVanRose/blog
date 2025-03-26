@@ -8,10 +8,10 @@ export default function Home() {
       <Header size="l"> HankVanRoses' Blog </Header>
       <div className={styles.cardContainer}> {/* Новый контейнер для карточек */}
         <SingleCard size="l" />
-        <SingleCard size="l" />
+        {/* <SingleCard size="l" />
         <SingleCard size="l" /> 
         <SingleCard size="l" />
-        <SingleCard size="l" />
+        <SingleCard size="l" /> */}
          
       </div>
     </div>
