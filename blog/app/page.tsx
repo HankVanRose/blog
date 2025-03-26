@@ -4,12 +4,15 @@ import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <div style={{display:'flex', flexDirection:'column'}}>
+    <div style={{display:'grid', height: '100vh'   }}>
       <Header size="l"> HankVanRoses' Blog </Header>
       <div className={styles.cardContainer}> {/* Новый контейнер для карточек */}
         <SingleCard size="l" />
         <SingleCard size="l" />
+        <SingleCard size="l" /> 
         <SingleCard size="l" />
+        <SingleCard size="l" />
+         
       </div>
     </div>
   );
