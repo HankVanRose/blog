@@ -3,7 +3,7 @@ import { CardBodyProps } from './CardBody.props';
 import styles from './CardBody.module.css';
 import cn from 'classnames';
 import Image from '../image.svg';
-import Like from '../Like/like.svg';
+import Like from '../Like/Like';
 import Arrow from './arrow.svg';
 
 export default function CardBody({

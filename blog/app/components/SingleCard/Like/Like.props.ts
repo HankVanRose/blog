@@ -1,6 +1,8 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 export interface LikeProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  isClickable?: boolean;
+  isLiked: boolean;
+  title: string;
+  description: string;
 }
