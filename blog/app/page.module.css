@@ -1,7 +1,11 @@
- .cardContainer {
-  display: flex; 
-  flex-wrap: wrap;  
-  justify-content: space-between;  
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-left: 10px;
+  margin-right: 43px;
+  row-gap: 10px;
+  justify-items: center;
+  align-items: start;
 }
 
 /* .cardContainer {
