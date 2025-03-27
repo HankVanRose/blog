@@ -10,6 +10,7 @@ export default function CardBody({
   size,
   className,
   children,
+  post,
   ...props
 }: CardBodyProps): JSX.Element {
   return (
@@ -25,11 +26,13 @@ export default function CardBody({
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <p className={styles.top}>Front-end · 1 месяц назад</p>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <span style={{fontSize:'12px'}}>4</span>
+          <span style={{ fontSize: '12px' }}>4</span>
           <Like style={{ marginLeft: '4px', marginBottom: '2px' }} />
         </div>
       </div>
-      <article className={styles.articleCard}>Как работать с CSS Grid</article>
+      <article className={styles.articleCard}>
+        {post?.title[0].toUpperCase() + post?.title.slice(1, 14)} ...
+      </article>
       <p className={styles.midText}>
         <a
           className={styles.mdn}
@@ -37,8 +40,7 @@ export default function CardBody({
         >
           Грид-раскладка (CSS Grid Layout){' '}
         </a>
-        представляет собой двумерную систему сеток в CSS. Гриды подойдут и для
-        верстки основных областей страницы..
+        {post?.body.slice(0, 150)}
       </p>
       <div
         style={{

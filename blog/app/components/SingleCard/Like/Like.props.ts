@@ -5,4 +5,5 @@ export interface LikeProps
   isLiked: boolean;
   title: string;
   description: string;
+  appearence: 'liked' | 'unliked';
 }

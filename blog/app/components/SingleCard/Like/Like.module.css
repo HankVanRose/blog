@@ -1,1 +1,11 @@
- 
+.like {
+    cursor: pointer;
+}
+
+.liked svg {
+  color: var(--red);
+}
+
+.unliked {
+    color: white;
+}

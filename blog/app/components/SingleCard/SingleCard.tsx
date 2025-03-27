@@ -1,4 +1,5 @@
-import React, { JSX } from 'react';
+'use client';
+import React, { JSX, useEffect, useState } from 'react';
 import { SingleCardProps } from './SingleCard.props';
 import styles from './SingleCard.module.css';
 import cn from 'classnames';
@@ -9,8 +10,21 @@ export default function SingleCard({
   size,
   className,
   children,
+  post,
   ...props
 }: SingleCardProps): JSX.Element {
+  // const [items, setItems] = useState();
+
+  // const addBonusHandler = (id) => {
+  //   const newItems = items.map((item) => {
+  //     if (item.id === id) {
+  //       item.likes += 1;
+  //     }
+  //     return item;
+  //   });
+  //   setItems(newItems);
+  // };
+
   return (
     <div
       className={cn(styles.singleCard, className, {
@@ -20,7 +34,7 @@ export default function SingleCard({
       })}
       {...props}
     >
-      <CardBody />
+      <CardBody post={post}/>
     </div>
   );
 }
