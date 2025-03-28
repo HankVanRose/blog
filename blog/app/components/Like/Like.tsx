@@ -9,6 +9,7 @@ export default function Like({
   title,
   description,
   className,
+  post,
   appearence,
   ...props
 }: LikeProps): JSX.Element {

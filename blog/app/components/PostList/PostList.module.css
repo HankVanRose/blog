@@ -1,6 +1,8 @@
 .singleCard {
   margin-left: 46px;
   margin-right: 43px;
+  border: 2px solid rgba(142, 142, 142, 0.364);
+  padding: 10px;
 }
 .singleCard:hover {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
