@@ -5,5 +5,6 @@ export interface PostListProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   size?: 's' | 'm' | 'l';
   children?: ReactNode;
-  post?: Post
+  posts?: Post[];
+  post?: Post;
 }

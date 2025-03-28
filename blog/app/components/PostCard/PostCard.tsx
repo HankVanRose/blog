@@ -15,7 +15,7 @@ export default function PostCard({
 }: PostCardProps): JSX.Element {
   return (
     <div
-      className={cn(styles.cardBody, className, {
+      className={cn(styles.postCard, className, {
         [styles.s]: size === 's',
         [styles.m]: size === 'm',
         [styles.l]: size === 'l',
