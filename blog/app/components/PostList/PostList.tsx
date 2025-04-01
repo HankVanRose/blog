@@ -1,5 +1,5 @@
 'use client';
-import React, { JSX, useEffect, useState } from 'react';
+import React, { JSX, useCallback, useEffect, useState } from 'react';
 import { PostListProps } from './PostList.props';
 import styles from './PostList.module.css';
 import cn from 'classnames';
@@ -13,12 +13,12 @@ export default function PostList({
   size,
   className,
   children,
-
   ...props
 }: PostListProps): JSX.Element {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<null | string>(null);
+  
 
   useEffect(() => {
     const allCards = async () => {
@@ -27,7 +27,7 @@ export default function PostList({
           'https://jsonplaceholder.typicode.com/posts'
         );
         if (response.status === 200) {
-          setPosts(response.data.slice(0, 2));
+          setPosts(response.data.slice(0, 5));
           setLoading(false);
         }
       } catch (error) {
@@ -42,26 +42,28 @@ export default function PostList({
 
     allCards();
   }, []);
-  return (
-    <div
-      className={cn(styles.postList, className, {
-        [styles.s]: size === 's',
-        [styles.m]: size === 'm',
-        [styles.l]: size === 'l',
-      })}
-      {...props}
-    >
-      {loading ? (
-        <Loading />
-      ) : error ? (
-        <Error message={error} />
-      ) : (
-        <div className={styles.cardContainer}>
-          {posts.map((post) => (
-            <PostCard key={post.id} post={post} />
-          ))}
-        </div>
-      )}
+
+  const addLikeHandler = useCallback((postId: number) => {
+   
+    setPosts((pervPosts) =>
+      pervPosts.map((post) => {
+        if (post.id === postId) {
+          return { ...post, userId: (post.userId || 0) + 1 };
+        }
+        return post;
+      })
+    );
+  }, []);
+
+  return loading ? (
+    <Loading />
+  ) : error ? (
+    <Error message={error} />
+  ) : (
+    <div className={styles.postList}>
+      {posts.map((post) => (
+        <PostCard key={post.id} post={post} onAddBonus={addLikeHandler} />
+      ))}
     </div>
   );
 }

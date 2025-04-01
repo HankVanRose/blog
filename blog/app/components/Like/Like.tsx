@@ -13,13 +13,11 @@ export default function Like({
   appearence,
   ...props
 }: LikeProps): JSX.Element {
-  const [cliked, setClicked] = useState<boolean>(false);
-
   return (
     <span
       className={cn(styles.like, {
-        [styles.liked]: appearence === 'liked' && isLiked !== false,
-        [styles.unliked]: appearence === 'unliked' && isLiked === false,
+        [styles.liked]: isLiked,
+        [styles.unliked]: !isLiked,
       })}
       {...props}
     >

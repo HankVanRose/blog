@@ -4,8 +4,9 @@
   margin-left: 40px;
   margin-right: 43px;
   row-gap: 10px;
-
+padding: 12px;
   border: 1px solid;
+   
 }
 
 /* .cardContainer {

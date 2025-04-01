@@ -1,9 +1,8 @@
 .postList {
   display: grid;
-  grid-template-rows: 1fr;
-}
-.postList:hover {
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-  transition: 0.2s;
-  transform: scale(1.02);
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+
+  margin-left: 40px;
+  margin-right: 40px;
+  gap: 10px;
 }
