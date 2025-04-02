@@ -1,6 +1,6 @@
 'use client';
-import React, { JSX, useCallback, useEffect, useState } from 'react';
-import { PostListProps } from './PostList.props';
+import React, { JSX, memo, useCallback, useEffect, useState } from 'react';
+import { ApiResponse, PostListProps } from './PostList.props';
 import styles from './PostList.module.css';
 import cn from 'classnames';
 import PostCard from '../PostCard/PostCard';
@@ -8,8 +8,9 @@ import { Post } from '@/app/page';
 import axios from 'axios';
 import Loading from '../Loading/Loading';
 import Error from '../Error/Error';
+import BigLike from '../BigLike/BigLike';
 
-export default function PostList({
+function PostList({
   size,
   className,
   children,
@@ -18,16 +19,16 @@ export default function PostList({
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<null | string>(null);
-  
 
   useEffect(() => {
     const allCards = async () => {
       try {
-        const response = await axios.get<Post[]>(
-          'https://jsonplaceholder.typicode.com/posts'
+        const response = await axios.get<ApiResponse>(
+          'https://dummyjson.com/posts'
         );
-        if (response.status === 200) {
-          setPosts(response.data.slice(0, 5));
+
+        if (response.status === 200 && response.data?.posts) {
+          setPosts(response.data?.posts?.slice(0, 3));
           setLoading(false);
         }
       } catch (error) {
@@ -44,7 +45,6 @@ export default function PostList({
   }, []);
 
   const addLikeHandler = useCallback((postId: number) => {
-   
     setPosts((pervPosts) =>
       pervPosts.map((post) => {
         if (post.id === postId) {
@@ -55,6 +55,11 @@ export default function PostList({
     );
   }, []);
 
+  const deleteHandler = useCallback((postId: number) => {
+    setPosts((prevPosts) => prevPosts.filter((post) => post.id !== postId));
+    console.log(postId);
+  }, []);
+
   return loading ? (
     <Loading />
   ) : error ? (
@@ -62,8 +67,14 @@ export default function PostList({
   ) : (
     <div className={styles.postList}>
       {posts.map((post) => (
-        <PostCard key={post.id} post={post} onAddBonus={addLikeHandler} />
+        <PostCard
+          key={post.id}
+          post={post}
+          addLikeHandler={addLikeHandler}
+          deleteHandler={deleteHandler}
+        />
       ))}
     </div>
   );
 }
+export default memo(PostList);

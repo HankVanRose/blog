@@ -1,12 +1,14 @@
 .header {
+  display: flex;
+  justify-content: space-between;
   border: 1px solid lightgray;
   position: relative;
-  border-style: groove;
+   
 
   height: 100px;
   margin: 8px 43px 17px 36px;
   max-width: 100%;
   justify-content: start;
-  display: grid;
+   
   align-items: center;
 }

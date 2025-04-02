@@ -13,15 +13,15 @@ export default function Like({
   appearence,
   ...props
 }: LikeProps): JSX.Element {
+  console.log(`isLiked`, isLiked);
+  const likeClass = cn(styles.like, {
+    [styles.liked]: isLiked === true,
+    [styles.unliked]: isLiked === false,
+  });
+
   return (
-    <span
-      className={cn(styles.like, {
-        [styles.liked]: isLiked,
-        [styles.unliked]: !isLiked,
-      })}
-      {...props}
-    >
-      <LikeIcon />
+    <span className={likeClass} {...props}>
+      <LikeIcon className={isLiked ? styles.liked : styles.unliked} />
     </span>
   );
 }

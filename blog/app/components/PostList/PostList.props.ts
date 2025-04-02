@@ -7,4 +7,9 @@ export interface PostListProps
   children?: ReactNode;
   posts?: Post[];
   post?: Post;
+  
+}
+
+export interface ApiResponse {
+  posts: Post[];
 }

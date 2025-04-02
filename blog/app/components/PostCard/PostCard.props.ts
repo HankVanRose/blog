@@ -6,4 +6,6 @@ export interface PostCardProps
   size?: 's' | 'm' | 'l';
   children?: ReactNode;
   post?: Post;
+  addLikeHandler?: (postId: number) => void;
+  deleteHandler?: (postId: number) => void;
 }

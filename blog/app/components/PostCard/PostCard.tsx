@@ -1,22 +1,34 @@
-import React, { JSX, memo } from 'react';
+import React, { JSX, memo, useState } from 'react';
 import { PostCardProps } from './PostCard.props';
 import styles from './PostCard.module.css';
 import cn from 'classnames';
 import Image from './image.svg';
 import Like from '../Like/Like';
 import Arrow from './arrow.svg';
+import { RxCross1 } from 'react-icons/rx';
 
 function PostCard({
   size,
   className,
   children,
   post,
-  onAddBonus,
+  addLikeHandler,
+  deleteHandler,
   ...props
 }: PostCardProps): JSX.Element {
   console.log('Render карточки:', post?.id);
+  const [liked, setLiked] = useState(false);
+
   const handleAddBonus = () => {
-    onAddBonus(post?.id);
+    if (post && post.id !== undefined && addLikeHandler) {
+      addLikeHandler(post.id);
+      setLiked((prev) => !prev);
+    }
+  };
+  const handleDelete = () => {
+    if (post && post.id !== undefined && deleteHandler) {
+      deleteHandler(post.id);
+    }
   };
 
   return (
@@ -29,7 +41,11 @@ function PostCard({
         })}
         {...props}
       >
-        <Image />
+        <div style={{ display: 'flex', gap: 100 }}>
+          <Image />
+          <RxCross1 onClick={handleDelete} />
+        </div>
+
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           {post ? (
             <>
@@ -40,6 +56,7 @@ function PostCard({
                   post={post}
                   style={{ marginLeft: '4px', marginBottom: '2px' }}
                   onClick={handleAddBonus}
+                  isLiked={liked}
                 />
               </div>
             </>
@@ -59,7 +76,7 @@ function PostCard({
               >
                 Грид-раскладка (CSS Grid Layout){' '}
               </a>
-              {post.body.slice(0, 150)}
+              {post.body.slice(0, 150)}...
             </p>
           </>
         ) : (
