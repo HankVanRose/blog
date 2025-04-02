@@ -1,0 +1,39 @@
+.border {
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.362);
+  width: 48;
+  height: 48;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50;
+  transition: box-shadow 0.5s ease-in-out, transform 0.5s ease-in-out;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.714);
+  background: var(--primary);
+}
+
+.border:hover {
+  transform: scale(1.01);
+  box-shadow: 0 5px 20px rgba(255, 234, 0, 0.714);
+}
+
+.biglike {
+  cursor: pointer;
+  margin-left: 500;
+  margin-top: 50;
+}
+.bigliked svg {
+  fill: var(--red);
+  background: var(--primary);
+}
+
+.notBigLiked svg {
+  fill: var(--white);
+}
+
+.text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  color: #2c2c2c;
+}

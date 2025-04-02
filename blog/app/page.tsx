@@ -1,19 +1,39 @@
+'use client';
+
+import { useCallback, useState } from 'react';
+import BigLike from './components/BigLike/BigLike';
 import Header from './components/Header/Header';
-import SingleCard from './components/SingleCard/SingleCard';
-import styles from './page.module.css';
+import PostList from './components/PostList/PostList';
+import axios from 'axios';
+import { title } from 'process';
+
+export interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+  reactions?: { dislikes: number; likes: number };
+  tags?: string[];
+  views?: number;
+}
 
 export default function Home() {
+  const [liked, setLiked] = useState(false);
+
+  const addLikeHandler = useCallback(async () => {
+    const response = await axios.patch('https://dummyjson.com/posts/1', {
+      title: 'I think I should shift to the moon',
+    });
+    setLiked((prev) => !prev);
+    console.log(response);
+  }, []);
+
   return (
-    <div style={{display:'grid', height: '100vh'   }}>
-      <Header size="l"> HankVanRoses' Blog </Header>
-      <div className={styles.cardContainer}> {/* Новый контейнер для карточек */}
-        <SingleCard size="l" />
-        <SingleCard size="l" />
-        <SingleCard size="l" /> 
-        <SingleCard size="l" />
-        <SingleCard size="l" />
-         
-      </div>
-    </div>
+    <>
+      <Header size="l">HankVanRoses' Blog</Header>
+
+      <PostList />
+      <BigLike addLikeHandler={addLikeHandler} isClicked={liked} />
+    </>
   );
 }

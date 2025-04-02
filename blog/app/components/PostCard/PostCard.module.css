@@ -1,7 +1,21 @@
-.cardBody {
-  margin: 10px 10px 192px 10px;
+.wholecard {
+  display: grid;
+}
+.postCard {
+   
+  border: 2px solid rgba(142, 142, 142, 0.364);
+  border-radius: 15px;
+  max-width: 500px;
+  margin-bottom: 4px;
+  padding: 10px;
+  transition: box-shadow 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
+.postCard:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  transition: 0.5s ease-in-out;
+  transform: scale(1.02);
+}
 .top {
   font-family: var(--font-family);
   display: 'flex';
@@ -52,35 +66,3 @@
   font-size: 12px;
   color: #6e6e6e;
 }
-
-
-
-/* .cardBody {
-  margin: 10px 10px 192px 10px;
-}
-
-.cardBody p {
-  font-family: var(--font-family);
-  display: 'flex';
-  font-size: '12px';
-  color: '#4b4b4b';
-  font-weight: 400;
-  margin-top: 8px;
-}
-
-.like {
-  display: flex;
-}
-
-.cardBody article {
-  font-family: var(--font-family);
-  margin-top: 5px;
-  font-weight: 700;
-  font-size: 18px;
-  color: #2c2c2c;
-  text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
-
-.cardBody a {
-  color: #1473e6;
-} */

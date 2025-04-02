@@ -1,0 +1,11 @@
+.like {
+    cursor: pointer;
+    
+}
+.liked svg {
+  fill: var(--red); /* Применяется красный цвет */
+}
+
+.unliked svg {
+  fill: white; /* Применяется белый цвет */
+}

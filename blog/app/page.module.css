@@ -1,11 +1,12 @@
 .cardContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin-left: 10px;
+  grid-template-columns: repeat(5, minmax(300px, 1fr));
+  margin-left: 40px;
   margin-right: 43px;
   row-gap: 10px;
-  justify-items: center;
-  align-items: start;
+padding: 12px;
+  border: 1px solid;
+   
 }
 
 /* .cardContainer {

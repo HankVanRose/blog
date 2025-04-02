@@ -4,7 +4,6 @@ import styles from './Header.module.css';
 import cn from 'classnames';
 import Logo from './Logo/Logo';
 import GitLink from './GitLink/GitLink';
- 
 
 export default function Header({
   size,
@@ -28,7 +27,7 @@ export default function Header({
       {...props}
     >
       <Logo tag="h1">HankVanRose's Blog</Logo>
-       <GitLink />
+      <GitLink />
     </div>
   );
 }
