@@ -4,7 +4,7 @@ import { ApiResponse, PostListProps } from './PostList.props';
 import styles from './PostList.module.css';
 import cn from 'classnames';
 import PostCard from '../PostCard/PostCard';
-import { Post } from '@/app/page';
+import { Post } from '@/app/(site)/page';
 import axios from 'axios';
 import Loading from '../Loading/Loading';
 import Error from '../Error/Error';
@@ -17,6 +17,7 @@ function PostList({
   ...props
 }: PostListProps): JSX.Element {
   const [posts, setPosts] = useState<Post[]>([]);
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<null | string>(null);
 

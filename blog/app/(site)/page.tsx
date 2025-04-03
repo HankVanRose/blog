@@ -1,11 +1,10 @@
 'use client';
 
 import { useCallback, useState } from 'react';
-import BigLike from './components/BigLike/BigLike';
-import Header from './components/Header/Header';
-import PostList from './components/PostList/PostList';
+import BigLike from '../components/BigLike/BigLike';
+import Header from '../components/Header/Header';
+import PostList from '../components/PostList/PostList';
 import axios from 'axios';
-import { title } from 'process';
 
 export interface Post {
   userId: number;
@@ -30,8 +29,6 @@ export default function Home() {
 
   return (
     <>
-      <Header size="l">HankVanRoses' Blog</Header>
-
       <PostList />
       <BigLike addLikeHandler={addLikeHandler} isClicked={liked} />
     </>

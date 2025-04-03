@@ -1,4 +1,4 @@
-import { Post } from '@/app/page';
+import { Post } from '@/app/(site)/page';
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
 export interface PostCardProps

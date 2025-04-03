@@ -13,7 +13,7 @@ export default function Like({
   appearence,
   ...props
 }: LikeProps): JSX.Element {
-  console.log(`isLiked`, isLiked);
+   
   const likeClass = cn(styles.like, {
     [styles.liked]: isLiked === true,
     [styles.unliked]: isLiked === false,
