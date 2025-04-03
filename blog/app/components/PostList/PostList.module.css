@@ -4,5 +4,6 @@
 
   margin-left: 40px;
   margin-right: 40px;
-  gap: 10px;
+  column-gap: 10px;
+  row-gap: 10px;
 }
