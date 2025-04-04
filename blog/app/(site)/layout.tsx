@@ -2,8 +2,11 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import styles from './page.module.css';
-import Logo from '../components/Header/Logo/Logo';
+
 import Header from '../components/Header/Header';
+import BigLike from '../components/BigLike/BigLike';
+import Footer from '../components/Footer/Footer';
+import PostList from '../components/PostList/PostList';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -27,11 +30,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <nav className={styles.nav}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${styles.container}`}
+      >
+        <nav className={styles.header}>
           <Header />
         </nav>
-        {children}
+        <main className={styles.body}>
+          <PostList />
+        </main>
+        <footer className={styles.footer}>
+          <Footer />
+        </footer>
       </body>
     </html>
   );

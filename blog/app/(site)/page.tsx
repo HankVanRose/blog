@@ -5,6 +5,7 @@ import BigLike from '../components/BigLike/BigLike';
 import Header from '../components/Header/Header';
 import PostList from '../components/PostList/PostList';
 import axios from 'axios';
+import Footer from '../components/Footer/Footer';
 
 export interface Post {
   userId: number;
@@ -17,20 +18,11 @@ export interface Post {
 }
 
 export default function Home() {
-  const [liked, setLiked] = useState(false);
-
-  const addLikeHandler = useCallback(async () => {
-    const response = await axios.patch('https://dummyjson.com/posts/1', {
-      title: 'I think I should shift to the moon',
-    });
-    setLiked((prev) => !prev);
-    console.log(response);
-  }, []);
+ 
 
   return (
     <>
-      <PostList />
-      <BigLike addLikeHandler={addLikeHandler} isClicked={liked} />
+      
     </>
   );
 }

@@ -44,7 +44,7 @@ function PostList({
 
     allCards();
   }, []);
-
+   
   const addLikeHandler = useCallback((postId: number) => {
     setPosts((pervPosts) =>
       pervPosts.map((post) => {

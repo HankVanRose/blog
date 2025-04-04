@@ -32,7 +32,7 @@ function PostCard({
   };
 
   return (
-    <div className={styles.wholecard}>
+     
       <div
         className={cn(styles.postCard, className, {
           [styles.s]: size === 's',
@@ -41,7 +41,7 @@ function PostCard({
         })}
         {...props}
       >
-        <div style={{ display: 'flex', gap: 100 }}>
+        <div style={{ display: 'flex', gap: 100}}>
           <Image />
           <RxCross1 onClick={handleDelete} />
         </div>
@@ -100,7 +100,7 @@ function PostCard({
           </div>
         </div>
       </div>
-    </div>
+   
   );
 }
 export default memo(PostCard);

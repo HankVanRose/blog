@@ -8,7 +8,7 @@ import BigLikeIcon from './shape.svg';
 export default function BigLike({
   appearence,
   className,
-  isClicked,
+  liked,
   addLikeHandler,
   ...props
 }: BigLikeProps): JSX.Element {
@@ -20,14 +20,17 @@ export default function BigLike({
       })}
       {...props}
     >
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div
+        className={styles.likeBox}
+        
+      >
         <span className={styles.text} style={{ marginRight: 20 }}>
           Понавилось? Жми
         </span>
         <div
           className={cn(styles.border, {
-            [styles.bigliked]: isClicked,
-            [styles.notBigLiked]: !isClicked,
+            [styles.bigliked]: liked,
+            [styles.notBigLiked]: !liked,
           })}
           onClick={addLikeHandler}
         >

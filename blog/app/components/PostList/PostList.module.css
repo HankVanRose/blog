@@ -1,7 +1,7 @@
 .postList {
   display: grid;
   grid-template-columns: repeat(3, minmax(250px, 1fr));
-
+justify-items: center ;
   margin-left: 40px;
   margin-right: 40px;
   column-gap: 10px;
