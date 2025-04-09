@@ -22,7 +22,7 @@ export default function Footer({
       title: 'I think I should shift to the moon',
     });
     setLiked((prev) => !prev);
-    console.log(`clicked`);
+    console.log(`Отправляю PATCH запрос`, response);
   }, []);
   return (
     <div

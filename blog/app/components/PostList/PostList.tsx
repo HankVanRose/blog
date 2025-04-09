@@ -29,7 +29,7 @@ function PostList({
         );
 
         if (response.status === 200 && response.data?.posts) {
-          setPosts(response.data?.posts?.slice(0, 3));
+          setPosts(response.data?.posts);
           setLoading(false);
         }
       } catch (error) {
@@ -44,7 +44,7 @@ function PostList({
 
     allCards();
   }, []);
-   
+
   const addLikeHandler = useCallback((postId: number) => {
     setPosts((pervPosts) =>
       pervPosts.map((post) => {

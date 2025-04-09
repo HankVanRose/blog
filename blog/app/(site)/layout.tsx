@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${styles.container}`}
+        className={`${geistSans.variable} ${geistMono.variable} ${styles.wrapper}`}
       >
         <nav className={styles.header}>
           <Header />
