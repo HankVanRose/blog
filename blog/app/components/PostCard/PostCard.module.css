@@ -2,10 +2,9 @@
   display: grid;
 }
 .postCard {
-   
   border: 2px solid rgba(142, 142, 142, 0.364);
   border-radius: 15px;
-  max-width: 500px;
+  max-width: 400px;
   margin-bottom: 4px;
   padding: 10px;
   transition: box-shadow 0.5s ease-in-out, transform 0.5s ease-in-out;
