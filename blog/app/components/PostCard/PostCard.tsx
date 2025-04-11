@@ -42,7 +42,7 @@ function PostCard({
     >
       <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
         <Image />
-        <RxCross1 onClick={handleDelete} />
+        <RxCross1 onClick={handleDelete} style={{ cursor: 'pointer' }} />
       </div>
 
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>

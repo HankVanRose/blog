@@ -7,6 +7,7 @@ import Header from '../components/Header/Header';
 import BigLike from '../components/BigLike/BigLike';
 import Footer from '../components/Footer/Footer';
 import PostList from '../components/PostList/PostList';
+import ServerPostLists from '../serverComponents/ServerPostLists';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -37,7 +38,7 @@ export default function RootLayout({
           <Header />
         </nav>
         <main className={styles.body}>
-          <PostList />
+          <ServerPostLists />
         </main>
         <footer className={styles.footer}>
           <Footer />

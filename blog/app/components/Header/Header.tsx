@@ -26,9 +26,11 @@ export default function Header({
       })}
       {...props}
     >
-      <Logo tag="h1">HankVanRose's Blog</Logo>
-     
-      <GitLink />
+       
+        <Logo tag="h1">HankVanRose's Blog</Logo>
+
+        <GitLink />
+      
     </div>
   );
 }
