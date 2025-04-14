@@ -34,6 +34,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.dark {
+  background-color: '#000000';
+  color: '#ffffff';
+
+  transition: '0.3s';
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

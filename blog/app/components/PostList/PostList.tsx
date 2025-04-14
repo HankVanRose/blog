@@ -49,7 +49,7 @@ function PostList({
     // console.log(postId);
   }, []);
 
-  console.log(`localPosts`, localposts);
+  
 
   return loading ? (
     <Loading />

@@ -8,6 +8,10 @@ import BigLike from '../components/BigLike/BigLike';
 import Footer from '../components/Footer/Footer';
 import PostList from '../components/PostList/PostList';
 import ServerPostLists from '../serverComponents/ServerPostLists';
+import ThemeAppProvider from '@/context/ThemeProvider';
+import { useMemo } from 'react';
+import { useTheme } from 'next-theme-kit';
+import { HeaderContext, UserContext } from '@/context/UserContext';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -34,15 +38,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${styles.wrapper}`}
       >
-        <nav className={styles.header}>
-          <Header />
-        </nav>
-        <main className={styles.body}>
-          <ServerPostLists />
-        </main>
-        <footer className={styles.footer}>
-          <Footer />
-        </footer>
+        <UserContext>
+          <ThemeAppProvider>
+            <nav className={styles.header}>
+              <Header />
+            </nav>
+            <main className={styles.body}>
+              <ServerPostLists />
+            </main>
+            <footer className={styles.footer}>
+              <Footer />
+            </footer>
+          </ThemeAppProvider>
+        </UserContext>
       </body>
     </html>
   );
