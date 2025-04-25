@@ -6,5 +6,6 @@ export default async function ServerPostLists() {
   const postsData = await getPosts();
   const allPosts = postsData?.posts || [];
 
+
   return <PostList allPosts={allPosts} />;
 }

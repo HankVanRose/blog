@@ -49,8 +49,6 @@ function PostList({
     // console.log(postId);
   }, []);
 
-  
-
   return loading ? (
     <Loading />
   ) : error ? (

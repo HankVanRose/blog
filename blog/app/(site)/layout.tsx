@@ -4,14 +4,13 @@ import './globals.css';
 import styles from './page.module.css';
 
 import Header from '../components/Header/Header';
-import BigLike from '../components/BigLike/BigLike';
+
 import Footer from '../components/Footer/Footer';
-import PostList from '../components/PostList/PostList';
+
 import ServerPostLists from '../serverComponents/ServerPostLists';
 import ThemeAppProvider from '@/context/ThemeProvider';
-import { useMemo } from 'react';
-import { useTheme } from 'next-theme-kit';
-import { HeaderContext, UserContext } from '@/context/UserContext';
+
+import { UserContext } from '@/context/UserContext';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -34,17 +33,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${styles.wrapper}`}
-      >
+    <html lang="ru">
+      <body className={`${geistSans.variable} ${geistMono.variable} ${styles.wrapper}`}>
         <UserContext>
           <ThemeAppProvider>
             <nav className={styles.header}>
               <Header />
             </nav>
             <main className={styles.body}>
-              <ServerPostLists />
+              {children}
             </main>
             <footer className={styles.footer}>
               <Footer />
