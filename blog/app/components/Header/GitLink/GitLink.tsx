@@ -1,8 +1,10 @@
-import React from 'react';
+'use client';
+import React, { useContext } from 'react';
 import { GitLinkProps } from './GitLink.props';
 import styles from './GitLink.module.css';
 import cn from 'classnames';
 import GitIcon from './gitIcon.svg';
+import { UserPageContext } from '@/context/UserContext';
 
 export default function GitLink({
   children,
@@ -11,6 +13,8 @@ export default function GitLink({
 
   ...props
 }: GitLinkProps) {
+  const { user } = useContext(UserPageContext);
+
   return (
     <span
       className={cn(styles.gitlink, className, {
@@ -20,11 +24,7 @@ export default function GitLink({
       })}
       {...props}
     >
-      <a
-        href="https://github.com/HankVanRose"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href={user.gitLink} target="_blank" rel="noopener noreferrer">
         <GitIcon />
       </a>
       {children}

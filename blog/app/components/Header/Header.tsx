@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { HeaderProps } from './Header.props';
 import styles from './Header.module.css';
 import cn from 'classnames';
 import Logo from './Logo/Logo';
 import GitLink from './GitLink/GitLink';
+
+import ThemeToogler from '../ThemeToogler';
+ 
 
 export default function Header({
   size,
@@ -13,6 +16,7 @@ export default function Header({
   background,
   ...props
 }: HeaderProps) {
+  
   return (
     <div
       className={cn(styles.header, className, {
@@ -27,8 +31,9 @@ export default function Header({
       {...props}
     >
       <Logo tag="h1">HankVanRose's Blog</Logo>
-     
+
       <GitLink />
+      <ThemeToogler />
     </div>
   );
 }

@@ -6,6 +6,7 @@ import Image from './image.svg';
 import Like from '../Like/Like';
 import Arrow from './arrow.svg';
 import { RxCross1 } from 'react-icons/rx';
+import Link from 'next/link';
 
 function PostCard({
   size,
@@ -16,7 +17,7 @@ function PostCard({
   deleteHandler,
   ...props
 }: PostCardProps): JSX.Element {
-  console.log('Render карточки:', post?.id);
+  // console.log('Render карточки:', post?.id);
   const [liked, setLiked] = useState(false);
 
   const handleAddBonus = () => {
@@ -42,7 +43,7 @@ function PostCard({
     >
       <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
         <Image />
-        <RxCross1 onClick={handleDelete} />
+        <RxCross1 onClick={handleDelete} style={{ cursor: 'pointer' }} />
       </div>
 
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -69,12 +70,7 @@ function PostCard({
             {post.title[0].toUpperCase() + post.title.slice(1, 14)} ...
           </article>
           <p className={styles.midText}>
-            <a
-              className={styles.mdn}
-              href="https://developer.mozilla.org/ru/docs/Web/CSS/CSS_grid_layout"
-            >
-              Грид-раскладка (CSS Grid Layout){' '}
-            </a>
+            
             {post.body.slice(0, 150)}...
           </p>
         </>
@@ -92,8 +88,14 @@ function PostCard({
       >
         <p className={styles.pBotRead}>3 минуты</p>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <span className={styles.readHref}>Читать</span>
-          <a href="" style={{ marginLeft: '4px' }}>
+          <Link
+            href={`/posts/${post?.id}`}
+            style={{ marginLeft: '4px' }}
+            className={styles.readHref}
+          >
+            Читать
+          </Link>
+          <a>
             <Arrow />
           </a>
         </div>

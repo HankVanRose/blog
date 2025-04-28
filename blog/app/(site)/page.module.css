@@ -9,6 +9,7 @@
 }
 
 .header {
+  display: grid;
   grid-area: header;
   grid-column-start: [startline];
   grid-column-end: [endline];
@@ -53,6 +54,10 @@
       'header header header'
       'body body body'
       'footer footer footer';
+  }
+  .header {
+    flex-direction: column;
+     
   }
 }
 @media (min-width: 830px) and (max-width: 1300px) {

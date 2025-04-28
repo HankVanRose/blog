@@ -1,11 +1,10 @@
-'use client';
-
-import { useCallback, useState } from 'react';
-import BigLike from '../components/BigLike/BigLike';
+ 
+import ThemeAppProvider from '@/context/ThemeProvider';
+import { UserContext } from '@/context/UserContext';
 import Header from '../components/Header/Header';
-import PostList from '../components/PostList/PostList';
-import axios from 'axios';
+import ServerPostLists from '../serverComponents/ServerPostLists';
 import Footer from '../components/Footer/Footer';
+import styles from './page.module.css';
 
 export interface Post {
   userId: number;
@@ -18,11 +17,5 @@ export interface Post {
 }
 
 export default function Home() {
- 
-
-  return (
-    <>
-      
-    </>
-  );
+  return <ServerPostLists />;
 }
